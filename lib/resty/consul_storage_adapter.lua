@@ -1,7 +1,7 @@
 local resty_consul = require "resty.consul"
 
 local _M = {
-  _VERSION = '0.1',
+  _VERSION = '0.2',
 }
 
 local function prefixed_key(self, key)
