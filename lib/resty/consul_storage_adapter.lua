@@ -141,7 +141,10 @@ function _M.keys_with_suffix(self, suffix)
   local keys = {}
 
   for _, key in ipairs(res.body) do
-    table.insert(keys, unprefixed_key(self, key))
+    local clean_key = unprefixed_key(self, key)
+    if suffix == "" or clean_key:sub(-#suffix) == suffix then
+      table.insert(keys, clean_key)
+    end
   end
 
   return keys
